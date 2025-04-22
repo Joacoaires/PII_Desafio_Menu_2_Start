@@ -32,7 +32,15 @@ public class Table
     {
         this.order.Add(dish);
     }
-
+    public double GetTotal(Table table)
+    {
+        double total = 0;
+        foreach (Dish dish in order)
+        {
+            total += dish.Price;
+        }
+        return total;
+    }
     public bool HasOrders()
     {
         return this.order.Count > 0;
